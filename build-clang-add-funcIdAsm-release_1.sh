@@ -6,9 +6,9 @@ getCurScriptDirName $0
 #CurScriptDir == /app_spy/script_basic/
 cd $CurScriptDir && \
 
-export LIB_CTk_CXX_FLAGS=" -fno-omit-frame-pointer -Wall   -O0    -g1"
+export LIB_ClFnSpy_CXX_FLAGS=" -fno-omit-frame-pointer -Wall   -O0    -g1"
 bash build-clang-add-funcIdAsm-release_x.sh
-unset LIB_CTk_CXX_FLAGS
+unset LIB_ClFnSpy_CXX_FLAGS
 
 #构建的Release版本,带调试信息(变量名称和行号),  当出现问题方便排查:
 # -rwxrwxr-x 1 zz zz 4.6M  7月 24 14:50 lib/libClnFuncSpy.so
