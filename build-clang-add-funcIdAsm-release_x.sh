@@ -22,14 +22,14 @@ bash $_out_dbg build-libfmt.sh && \
 
 (bash setup--nlohmann--json.sh && \
 bash setup--yhirose--cpp-httplib.sh && \
-BUILD_HOME=/bal/clang-add-funcIdAsm/build/ && \
+BUILD_HOME=/app_spy/clang-funcSpy/build/ && \
 mkdir -p $BUILD_HOME && \
 rm -fr $BUILD_HOME/* && \
 cd $BUILD_HOME && \
 
 #构建的Release版本 : build_release_0.sh
 # LIB_CTk_CXX_FLAGS="  "
-# -rwxrwxr-x 1 zz zz 874K  7月 24 13:13 /bal/clang-add-funcIdAsm/build/lib/libCTk.so
+# -rwxrwxr-x 1 zz zz 874K  7月 24 13:13 /app_spy/clang-funcSpy/build/lib/libCTk.so
 
 #构建的Release版本,带调试信息(变量名称和行号),  当出现问题方便排查: build_release_1.sh
 #LIB_CTk_CXX_FLAGS=" -fno-omit-frame-pointer -Wall   -O0    -g1"
@@ -37,7 +37,7 @@ cd $BUILD_HOME && \
 
 #构建的Release版本,带调试信息(变量名称和行号、局部变量),  当出现问题方便排查:  build_release_2.sh
 # LIB_CTk_CXX_FLAGS=" -fno-omit-frame-pointer -Wall   -O0    -g2"
-# -rwxrwxr-x 1 zz zz 27M  7月 24 15:03 /bal/clang-add-funcIdAsm/build/lib/libCTk.so
+# -rwxrwxr-x 1 zz zz 27M  7月 24 15:03 /app_spy/clang-funcSpy/build/lib/libCTk.so
 
 cmakeInstall && \
 

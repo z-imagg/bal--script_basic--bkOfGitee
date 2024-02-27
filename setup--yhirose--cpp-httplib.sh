@@ -24,6 +24,6 @@ CmtId="f14accb7b6ff4499321e14c61497bc7e4b28e49b"
 gitCko_tagBrc_asstCmtId $GitDir $Ver $CmtId
 
 #2. 软链接 到 include目录下
-inc_dir="/bal/clang-add-funcIdAsm/include/cpp_httplib" && \
+inc_dir="/app_spy/clang-funcSpy/include/cpp_httplib" && \
 [ -e $inc_dir ] || ln -s  $REPO_HOME $inc_dir && \
 _=end

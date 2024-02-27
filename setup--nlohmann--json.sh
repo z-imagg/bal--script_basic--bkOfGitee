@@ -20,6 +20,6 @@ CmtId="a259ecc51e1951e12f757ce17db958e9881e9c6c"
 gitCko_tagBrc_asstCmtId $GitDir $Ver $CmtId
 
 #2. 软链接 到 include目录下
-inc_dir="/bal/clang-add-funcIdAsm/include/nlohmann" && \
+inc_dir="/app_spy/clang-funcSpy/include/nlohmann" && \
 [ -e $inc_dir ] || ln -s  "$REPO_HOME/include/nlohmann" $inc_dir && \
 _=end

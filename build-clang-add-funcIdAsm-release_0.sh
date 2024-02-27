@@ -17,4 +17,4 @@ export LIB_CTk_CXX_FLAGS="  "
 bash $_out_dbg build-clang-add-funcIdAsm-release_x.sh
 unset LIB_CTk_CXX_FLAGS
 #构建的Release版本 :
-# -rwxrwxr-x 1 zz zz 874K  7月 24 13:13 /bal/clang-add-funcIdAsm/build/lib/libCTk.so
+# -rwxrwxr-x 1 zz zz 874K  7月 24 13:13 /app_spy/clang-funcSpy/build/lib/libCTk.so
