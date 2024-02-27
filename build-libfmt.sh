@@ -13,21 +13,21 @@
 
 ###2. 当 确定参数行都被短路 时, 再 使用 真实 ifelse 函数:
 #加载 func.sh中的函数 ifelse
-source /bal/bash-simplify/func.sh
+source /app_spy/bash-simplify/func.sh
 ######}
 
 
-source /bal/bash-simplify/dir_util.sh
+source /app_spy/bash-simplify/dir_util.sh
 
 #当前脚本文件名, 此处 CurScriptF=build-libfmt.sh
 CurScriptF=$(pwd)/$0
 
 
-source /bal/bash-simplify/dir_util.sh
+source /app_spy/bash-simplify/dir_util.sh
 
 getCurScriptDirName $0
 #当前脚本文件 绝对路径 CurScriptF, 当前脚本文件 名 CurScriptNm, 当前脚本文件 所在目录 绝对路径 CurScriptNm
-#CurScriptDir == /bal/script_basic/
+#CurScriptDir == /app_spy/script_basic/
 cd $CurScriptDir && \
 
 
@@ -35,7 +35,7 @@ cd $CurScriptDir && \
 
 
 #https://github.com/fmtlib/fmt.git
-REPO_HOME="/bal/fmtlib-fmt"
+REPO_HOME="/app_spy/fmtlib-fmt"
 GitDir="$REPO_HOME"
 Ver="10.0.0"
 CmtId="a0b8a92e3d1532361c2f7feb63babc5c18d00ef2"

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 
-source /bal/bash-simplify/func.sh
+source /app_spy/bash-simplify/func.sh
 
-source /bal/bash-simplify/dir_util.sh
+source /app_spy/bash-simplify/dir_util.sh
 
 #当前脚本文件名, 此处 CurScriptF=setup--nlohmann--json.sh
 CurScriptF=$(pwd)/$0
@@ -12,7 +12,7 @@ CurScriptF=$(pwd)/$0
 
 
 #https://github.com/nlohmann/json.git
-REPO_HOME="/bal/nlohmann--json"
+REPO_HOME="/app_spy/nlohmann--json"
 GitDir="$REPO_HOME/"
 Ver="develop"
 CmtId="a259ecc51e1951e12f757ce17db958e9881e9c6c"

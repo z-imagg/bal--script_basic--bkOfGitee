@@ -45,8 +45,8 @@ grep "docker.bridge" /etc/hosts || echo "
 #maven
 createSoftLink /app/apache-maven-3.8.8/bin/mvn /app/bin/mvn
 
-#/bal/script_basic/bin
-export  PATH=$PATH:/bal/script_basic/bin
+#/app_spy/script_basic/bin
+export  PATH=$PATH:/app_spy/script_basic/bin
 
 #cytoscape
 createSoftLink /app/cytoscape-unix-3.10.1/cytoscape.sh /app/bin/cytoscape.sh
@@ -57,11 +57,11 @@ alias e='notepad--'
 alias sudo='sudo '
 alias p='/app/pycharm-2022.3/bin/pycharm.sh'
 alias findigngit='find . -type f -not -path "*/\.git/*" '
-alias bldm='multi_build=true bash /bal/bldLinux4RunOnBochs/build-linux4.14.259-on-x64_u22.04.3LTS.sh'
-alias r='bash /bal/bldLinux4RunOnBochs/bochs2.7boot-grub4dos-linux4.14.259.sh'
+alias bldm='multi_build=true bash /app_spy/bldLinux4RunOnBochs/build-linux4.14.259-on-x64_u22.04.3LTS.sh'
+alias r='bash /app_spy/bldLinux4RunOnBochs/bochs2.7boot-grub4dos-linux4.14.259.sh'
 alias disa='/app/Hopper-v4-5.13.5-Linux-demo/opt/hopper-v4/bin/Hopper'
 alias drw='/app/cytoscape-unix-3.10.1/cytoscape.sh'
-alias b4='cd /bal/bldLinux4RunOnBochs/'
+alias b4='cd /app_spy/bldLinux4RunOnBochs/'
 alias c='source /app/miniconda3/bin/activate'
 alias cda='conda deactivate'
 alias mvnRMhtml='find ~/.m2/ -name _remote.repositories | xargs -I@ dirname @ | xargs -I% sh -c "file %/*.jar | grep HTML 1>/dev/null 2>/dev/null && rm -v %/*"'
@@ -74,6 +74,6 @@ rustc --version 2>/dev/null && \
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup && \
 source ~/.cargo/env ;}
 
-SelfFP="/bal/script_basic/.bash_profile"
+SelfFP="/app_spy/script_basic/.bash_profile"
 grep $SelfFP ~/.bashrc || echo "请手工添加以下内容到~/.bashrc的末尾: source $SelfFP 1>/dev/null 2>/dev/null"
-#请手工添加以下内容到~/.bashrc的末尾: source /bal/script_basic/.bash_profile 1>/dev/null 2>/dev/null
+#请手工添加以下内容到~/.bashrc的末尾: source /app_spy/script_basic/.bash_profile 1>/dev/null 2>/dev/null

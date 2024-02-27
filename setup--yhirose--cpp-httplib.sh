@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 
-source /bal/bash-simplify/func.sh
+source /app_spy/bash-simplify/func.sh
 
-source /bal/bash-simplify/dir_util.sh
+source /app_spy/bash-simplify/dir_util.sh
 
 #当前脚本文件名, 此处 CurScriptF=setup--yhirose--cpp-httplib.sh
 CurScriptF=$(pwd)/$0
@@ -16,7 +16,7 @@ CurScriptF=$(pwd)/$0
 
 
 #https://github.com/yhirose/cpp-httplib.git
-REPO_HOME="/bal/yhirose--cpp-httplib"
+REPO_HOME="/app_spy/yhirose--cpp-httplib"
 GitDir="$REPO_HOME/"
 Ver="v0.14.2"
 CmtId="f14accb7b6ff4499321e14c61497bc7e4b28e49b"

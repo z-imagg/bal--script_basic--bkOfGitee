@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 
-source /bal/bash-simplify/dir_util.sh
+source /app_spy/bash-simplify/dir_util.sh
 getCurScriptDirName $0
 #当前脚本文件 绝对路径 CurScriptF, 当前脚本文件 名 CurScriptNm, 当前脚本文件 所在目录 绝对路径 CurScriptNm
-#CurScriptDir == /bal/script_basic/
+#CurScriptDir == /app_spy/script_basic/
 cd $CurScriptDir && \
 
 #获取调用者 是否开启了 bash -x  即 是否开启 bash 调试
@@ -17,7 +17,7 @@ echo "$_out_en_dbg,【$_out_dbg】" && \
 #如果clang插件不存在，则构建插件
 clPlgSo='/app_spy/clang-funcSpy/build/lib/libCTk.so' && \
 #clang插件在30分钟后 必定会被重新编译
-{ fileModifiedInNSeconds $clPlgSo "30*3600" || bash $_out_dbg /bal/script_basic/build-clang-add-funcIdAsm-release_0.sh ;}
+{ fileModifiedInNSeconds $clPlgSo "30*3600" || bash $_out_dbg /app_spy/script_basic/build-clang-add-funcIdAsm-release_0.sh ;}
 
 
 #miniconda activate
@@ -26,29 +26,29 @@ miniconda3Activate && \
 pip install lark
 pip install plumbum
 
-interceptor=/bal/cmd-wrap/interceptor.py
+interceptor=/app_spy/cmd-wrap/interceptor.py
 chmod +x $interceptor
 
-fake_bin=/bal/bin
+fake_bin=/app_spy/bin
 mkdir -p $fake_bin
 
 export PATH=$fake_bin:$PATH
-export PYTHONPATH=/bal/cmd-wrap/lark_parser/:$PYTHONPATH
+export PYTHONPATH=/app_spy/cmd-wrap/lark_parser/:$PYTHONPATH
 
 #BashRcF=~/.bashrc
 #grep fake_bin $BashRcF || { echo '
-#fake_bin=/bal/bin
+#fake_bin=/app_spy/bin
 #export PATH=$fake_bin:$PATH
-#export PYTHONPATH=/bal/cmd-wrap/lark_parser/:$PYTHONPATH
+#export PYTHONPATH=/app_spy/cmd-wrap/lark_parser/:$PYTHONPATH
 #' | tee -a $BashRcF ;}
 
 #重命名上一次的日志文件们
-gFLs=$(find /bal/  -maxdepth 1  -regex '/bal/g-[0-9]+\.log' | xargs -I% echo -n "% ") && \
+gFLs=$(find /app_spy/  -maxdepth 1  -regex '/app_spy/g-[0-9]+\.log' | xargs -I% echo -n "% ") && \
 ( mvFile_AppendCurAbsTime_multi $gFLs || : ) && \
 
 #记录初始的环境变量名字列表
-chmod +x /bal/cmd-wrap/env-diff-show.sh
-ignore_env_name_list_f=/bal/.ignore_env_name_list.txt
+chmod +x /app_spy/cmd-wrap/env-diff-show.sh
+ignore_env_name_list_f=/app_spy/.ignore_env_name_list.txt
 env | cut -d= -f1 > $ignore_env_name_list_f
 echo "CONDA_EXE
 CONDA_PREFIX
@@ -79,13 +79,13 @@ fake_clang=$fake_bin/clang
 #ln -v -s $interceptor $fake_gpp
 
 
-#由于 /bal/bin/clang  在 PATH 中 比 /usr/bin/gcc 更先被搜索到
+#由于 /app_spy/bin/clang  在 PATH 中 比 /usr/bin/gcc 更先被搜索到
 
-#请求 假的 /bal/bin/clang 时 ，发生转发:
-#/bal/bin/clang ---软连接---> interceptor.py -----由route_tab.py转发---->  $CLANG_HOME_BIN/clang
+#请求 假的 /app_spy/bin/clang 时 ，发生转发:
+#/app_spy/bin/clang ---软连接---> interceptor.py -----由route_tab.py转发---->  $CLANG_HOME_BIN/clang
 
-#请求 假的 /bal/bin/gcc 时 ，发生转发:
-#/bal/bin/i686-linux-gnu-gcc ---软连接---> interceptor.py -----由route_tab.py转发---->  /usr/bin/i686-linux-gnu-gcc-11
+#请求 假的 /app_spy/bin/gcc 时 ，发生转发:
+#/app_spy/bin/i686-linux-gnu-gcc ---软连接---> interceptor.py -----由route_tab.py转发---->  /usr/bin/i686-linux-gnu-gcc-11
 
 
 
