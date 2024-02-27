@@ -11,4 +11,4 @@ bash build-clang-add-funcIdAsm-release_x.sh
 unset LIB_CTk_CXX_FLAGS
 
 #构建的Release版本,带调试信息(变量名称和行号),  当出现问题方便排查:
-# -rwxrwxr-x 1 zz zz 4.6M  7月 24 14:50 lib/libCTk.so
+# -rwxrwxr-x 1 zz zz 4.6M  7月 24 14:50 lib/libClnFuncSpy.so

@@ -15,7 +15,7 @@ echo "$_out_en_dbg,【$_out_dbg】" && \
 
 
 #如果clang插件不存在，则构建插件
-clPlgSo='/app_spy/clang-funcSpy/build/lib/libCTk.so' && \
+clPlgSo='/app_spy/clang-funcSpy/build/lib/libClnFuncSpy.so' && \
 #clang插件在30分钟后 必定会被重新编译
 { fileModifiedInNSeconds $clPlgSo "30*3600" || bash $_out_dbg /app_spy/script_basic/build-clang-add-funcIdAsm-release_0.sh ;}
 
