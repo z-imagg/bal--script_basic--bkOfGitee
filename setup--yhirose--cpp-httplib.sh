@@ -18,7 +18,7 @@ CurScriptF=$(pwd)/$0
 #https://github.com/yhirose/cpp-httplib.git
 REPO_HOME="/app_spy/yhirose--cpp-httplib"
 GitDir="$REPO_HOME/"
-Ver="v0.14.2"
+Ver="app_spy/v0.14.2a"
 CmtId="37f8dc43829994e6cb2d1b78136cab320da8e546"
 
 gitCko_tagBrc_asstCmtId $GitDir $Ver $CmtId
