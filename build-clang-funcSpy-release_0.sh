@@ -14,7 +14,7 @@ echo "$_out_en_dbg,【$_out_dbg】" && \
 
 
 export LIB_ClFnSpy_CXX_FLAGS="  "
-bash $_out_dbg build-clang-add-funcIdAsm-release_x.sh
+bash $_out_dbg build-clang-funcSpy-release_x.sh
 unset LIB_ClFnSpy_CXX_FLAGS
 #构建的Release版本 :
 # -rwxrwxr-x 1 zz zz 874K  7月 24 13:13 /app_spy/clang-funcSpy/build/lib/libClnFuncSpy.so

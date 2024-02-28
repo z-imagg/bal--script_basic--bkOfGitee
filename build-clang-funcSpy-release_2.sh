@@ -8,7 +8,7 @@ getCurScriptDirName $0
 cd $CurScriptDir && \
 
 export  LIB_ClFnSpy_CXX_FLAGS=" -fno-omit-frame-pointer -Wall   -O0    -g2"
-bash build-clang-add-funcIdAsm-release_x.sh
+bash build-clang-funcSpy-release_x.sh
 unset LIB_ClFnSpy_CXX_FLAGS
 
 #构建的Release版本,带调试信息(变量名称和行号、局部变量),  当出现问题方便排查:
